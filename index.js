@@ -25,5 +25,9 @@ app.listen(PORT, HOSTNAME, () => {
 })
 
 app.get('/', (req, res) => {
-  res.send('<div>Home Page</div>')
+  res.send('<div>Home Page</div>');
 });
+
+app.get('todos', (req, res) => {
+  res.send('<div>Home Page</div>');
+})
