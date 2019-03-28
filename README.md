@@ -87,4 +87,4 @@ Mini Express App [Fancy_Todo_List]
     - A http request cookie parser middleware for node
   7. nodemon [https://www.npmjs.com/package/nodemon]
     - A utility module that continues searching our directories for changes and restarts the server accordingly
- 4. 
+ 4. run knex init and setup our knexfile
