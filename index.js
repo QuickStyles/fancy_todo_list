@@ -41,7 +41,10 @@ app.get('/login', (req, res) => {
   res.render('login')
 })
 
+const ONE_DAY = new Date(Date.now() + 1*24*60*60*1000);
 app.post('/login', (req, res) => {
+  const { username } = req.body;
+  res.cookie('username', username, { expires: ONE_DAY })
   res.end();
 })
 
