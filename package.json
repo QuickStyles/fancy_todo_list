@@ -15,5 +15,11 @@
   "bugs": {
     "url": "https://github.com/QuickStyles/fancy_todo_list/issues"
   },
-  "homepage": "https://github.com/QuickStyles/fancy_todo_list#readme"
+  "homepage": "https://github.com/QuickStyles/fancy_todo_list#readme",
+  "dependencies": {
+    "cookie-parser": "^1.4.4",
+    "ejs": "^2.6.1",
+    "express": "^4.16.4",
+    "morgan": "^1.9.1"
+  }
 }
