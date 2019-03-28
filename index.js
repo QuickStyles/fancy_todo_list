@@ -31,6 +31,9 @@ app.use((request, response, next) => {
   next();
 });
 
+const knexfile = require("./knexfile.js");
+const knex = require("knex")(knexfile["development"]);
+
 app.get('/', (req, res) => {
   let username = '';
   if (res.locals.username) {
@@ -44,11 +47,21 @@ app.get('/todos', (req, res) => {
 })
 
 app.get('/todos/new', (req, res) => {
-  res.end();
+  res.render('new_todo');
 })
 
 app.post('/todos', (req, res) => {
-  res.end();
+  const { todo_item } = req.body;
+  knex.insert({ username: req.cookies.username, body: todo_item})
+  .into('todo_list')
+  .then((record) => {
+    console.log(`record created!`);
+    res.redirect('/');
+  })
+  .catch((err) => {
+    console.error(err);
+    res.redirect('/todos/new');
+  })
 })
 
 app.get('/login', (req, res) => {
