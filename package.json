@@ -4,7 +4,8 @@
   "description": "Mini Express App [Fancy_Todo_List]",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
   },
   "repository": {
     "type": "git",
@@ -21,5 +22,8 @@
     "ejs": "^2.6.1",
     "express": "^4.16.4",
     "morgan": "^1.9.1"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.10"
   }
 }
