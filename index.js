@@ -46,7 +46,13 @@ app.get('/todos', (req, res) => {
   res.render('home', { username: "I'm from '/todos'. We do things differently here ¯\_(ツ)_/¯"});
 })
 
-app.get('/todos/new', (req, res) => {
+app.get('/todos/new', (request, response, next) => {
+  if(request.cookies.username) {
+    next()
+  } else {
+    response.redirect('/login');
+  }
+}, (req, res) => {
   res.render('new_todo');
 })
 
