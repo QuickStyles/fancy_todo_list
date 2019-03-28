@@ -1,0 +1,19 @@
+{
+  "name": "y",
+  "version": "1.0.0",
+  "description": "Mini Express App [Fancy_Todo_List]",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/QuickStyles/fancy_todo_list.git"
+  },
+  "author": "Brandon YW Lam",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/QuickStyles/fancy_todo_list/issues"
+  },
+  "homepage": "https://github.com/QuickStyles/fancy_todo_list#readme"
+}
