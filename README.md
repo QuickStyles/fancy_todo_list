@@ -33,10 +33,10 @@ Mini Express App [Fancy_Todo_List]
   • GET "/" AND "todos"
     - This route will be our root or home page
     - It will display all of our Todo Items
-  • GET "/todo/new"
+  • GET "/todos/new"
     - This route will be our new todo form page
     - It will show a form that allows our current user create a todo item
-  • POST "/todo"
+  • POST "/todos"
     - This route will handle the request to create a todo item
     - It doesn't render its own view, it just recieves a request with parameters and responds accordingly
     - It should save a todo item with the passed parameters and username from the cookies into the database

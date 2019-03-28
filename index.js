@@ -28,6 +28,24 @@ app.get('/', (req, res) => {
   res.send('<div>Home Page</div>');
 });
 
-app.get('todos', (req, res) => {
+app.get('/todos', (req, res) => {
   res.send('<div>Home Page</div>');
 })
+
+app.get('/todos/new', (req, res) => {
+  res.end();
+})
+
+app.post('/todos', (req, res) => {
+  res.end();
+})
+
+app.get('/login', (req, res) => {
+  res.end();
+})
+
+app.post('/login', (req, res) => {
+  res.end();
+})
+
+
