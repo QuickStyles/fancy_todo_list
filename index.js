@@ -38,7 +38,7 @@ app.post('/todos', (req, res) => {
 })
 
 app.get('/login', (req, res) => {
-  res.end();
+  res.render('login')
 })
 
 app.post('/login', (req, res) => {

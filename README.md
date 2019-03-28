@@ -98,9 +98,6 @@ Mini Express App [Fancy_Todo_List]
   3. setup express.urlencoded
   4. setup express.static
 4) Setup Routes
-
 5) Create Views
-
 6) Integrate Database(knex/pg)
-
 7)
