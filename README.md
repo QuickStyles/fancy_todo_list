@@ -63,3 +63,28 @@ Mini Express App [Fancy_Todo_List]
   - updated_at: timestamp
 
 • The website should be styled with Twitter Bootstrap...
+
+-- STEPS --
+1) Setup Project
+ 1. run npm init
+  - initializes a npm project
+ 2. add gitignore
+  - gitignore defines files which git should ignore/not track
+ 3. install dependencies:
+  1. express [https://www.npmjs.com/package/express]
+    - Web Framework
+  2. morgan [https://www.npmjs.com/package/morgan]
+    - A http request logger middleware for node
+  3. ejs [https://www.npmjs.com/package/ejs]
+    - template engine
+  4. knex [https://www.npmjs.com/package/knex]
+    - Our ORM/SQL builder
+    - Knex isn't a full ORM (object relational mapper) but its very nice.
+  5. pg [https://www.npmjs.com/package/pg]
+    - This is a PostgreSQL client for NodeJS.
+    - Databases run on a server of their own. Just like how we have clients talking to our NodeJS servers databases need some sort of client connecting to them and making requests (queries).
+  6. cookie-parser [https://www.npmjs.com/package/cookie-parser]
+    - A http request cookie parser middleware for node
+  7. nodemon [https://www.npmjs.com/package/nodemon]
+    - A utility module that continues searching our directories for changes and restarts the server accordingly
+ 4. 
