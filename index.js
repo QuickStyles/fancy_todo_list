@@ -23,3 +23,7 @@ const HOSTNAME = 'localhost';
 app.listen(PORT, HOSTNAME, () => {
   console.log(`App running on ${HOSTNAME}:${PORT}`);
 })
+
+app.get('/', (req, res) => {
+  res.send('<div>Home Page</div>')
+});
