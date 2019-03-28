@@ -58,7 +58,7 @@ Mini Express App [Fancy_Todo_List]
 • It should have a database with one table called "todo_item" with the following columns:
   - id: number
   - username: string
-  - body: string
+  - body: text
   - created_at: timestamp
   - updated_at: timestamp
 
