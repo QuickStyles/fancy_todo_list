@@ -21,12 +21,6 @@ app.use(express.static('/public'));
 // tell express that our views are using ejs
 app.set('view engine', 'ejs');
 
-const PORT = 4545;
-const HOSTNAME = 'localhost';
-app.listen(PORT, HOSTNAME, () => {
-  console.log(`App running on ${HOSTNAME}:${PORT}`);
-})
-
 app.get('/', (req, res) => {
   res.render('home');
 });
@@ -51,4 +45,9 @@ app.post('/login', (req, res) => {
   res.end();
 })
 
+const PORT = 4545;
+const HOSTNAME = 'localhost';
 
+app.listen(PORT, HOSTNAME, () => {
+  console.log(`App running on ${HOSTNAME}:${PORT}`);
+})
