@@ -3,6 +3,7 @@ exports.up = function(knex, Promise) {
     t.increments('id').primary();
     t.string('username');
     t.text('body');
+    // t.timestamps(true, true);
     t.timestamps();
   })
 };
