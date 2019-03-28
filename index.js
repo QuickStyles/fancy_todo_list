@@ -8,6 +8,9 @@ const cookieParser = require('cookie-parser');
 // initialize our express application.
 const app = express();
 
+// tell express that our views are using ejs
+app.set('view engine', 'ejs');
+
 // https://expressjs.com/en/api.html#express.urlencoded
 // please read the above resource to understand what urlencoded does
 // TLDR: it parses HTTP requests and creates the request object that we use in our routes.
@@ -18,15 +21,26 @@ app.use(express.urlencoded({ extended: true }))
 // TLDR: it creates a route that will respond with static assets (files) like css, images, javascript
 app.use(express.static('/public'));
 
-// tell express that our views are using ejs
-app.set('view engine', 'ejs');
+// initialize the cookie parser middleware
+app.use(cookieParser());
+
+// will grab request.cookies and set it to the response.locals
+app.use((request, response, next) => {
+  console.log(request.cookies);
+  response.locals.username = request.cookies.username;
+  next();
+});
 
 app.get('/', (req, res) => {
-  res.render('home');
+  let username = '';
+  if (res.locals.username) {
+    username = res.locals.username
+  }
+  res.render('home', { username });
 });
 
 app.get('/todos', (req, res) => {
-  res.render('home');
+  res.render('home', { username: "I'm from '/todos'. We do things differently here ¯\_(ツ)_/¯"});
 })
 
 app.get('/todos/new', (req, res) => {
@@ -44,8 +58,8 @@ app.get('/login', (req, res) => {
 const ONE_DAY = new Date(Date.now() + 1*24*60*60*1000);
 app.post('/login', (req, res) => {
   const { username } = req.body;
-  res.cookie('username', username, { expires: ONE_DAY })
-  res.end();
+  res.cookie('username', username, { expires: ONE_DAY, httpOnly:true })
+  res.redirect('/');
 })
 
 const PORT = 4545;
