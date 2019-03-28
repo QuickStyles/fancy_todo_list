@@ -18,6 +18,9 @@ app.use(express.urlencoded({ extended: true }))
 // TLDR: it creates a route that will respond with static assets (files) like css, images, javascript
 app.use(express.static('/public'));
 
+// tell express that our views are using ejs
+app.set('view engine', 'ejs');
+
 const PORT = 4545;
 const HOSTNAME = 'localhost';
 app.listen(PORT, HOSTNAME, () => {
@@ -25,11 +28,11 @@ app.listen(PORT, HOSTNAME, () => {
 })
 
 app.get('/', (req, res) => {
-  res.send('<div>Home Page</div>');
+  res.render('home');
 });
 
 app.get('/todos', (req, res) => {
-  res.send('<div>Home Page</div>');
+  res.render('home');
 })
 
 app.get('/todos/new', (req, res) => {
